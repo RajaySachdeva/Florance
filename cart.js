@@ -1,4 +1,4 @@
-// Get the cart items from local storage
+// Get the cart items from local stoage
 let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
 // Function to calculate the total price of the cart
