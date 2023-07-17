@@ -1,0 +1,248 @@
+  body {
+    margin: 0;
+        padding: 0;
+        font-family: "Arial", sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+  }
+  
+  header {
+    background-color: #ef84b3;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+  }
+
+  #logo img {
+    height: 50px;
+  }
+
+  #header-icons a:last-child {
+    margin-left: 0;
+  }
+
+  #navigation {
+    background-color: #ef84b3;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  #navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #navigation li {
+    display: inline-block;
+  }
+
+  #navigation li a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #ef84b3;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease;
+  }
+
+  #navigation li a:hover {
+    background-color: #c95b88;
+  }
+
+  h1 {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  
+  
+  .discussion-container {
+    margin: 20px;
+  }
+  
+  .post {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .post-header {
+    margin-bottom: 10px;
+  }
+  
+  .post-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .post-author {
+    color: #777;
+    font-style: italic;
+  }
+  
+  .post-content {
+    margin-bottom: 20px;
+  }
+  
+  .post-button {
+    background-color: #ef84b3;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ef84b3;
+    border-radius: 5px;
+  }
+  
+  form h2 {
+    margin-top: 0;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  button[type="submit"] {
+    background-color: #ef84b3;
+   
+  }  
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .container p {
+    text-align: center;
+  }
+  
+  .form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-container input[type="text"],
+  .form-container input[type="email"],
+  .form-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .form-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ef84b3;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .form-container p {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .form-container p a {
+    color: #ef84b3;
+    text-decoration: none;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+
+  .container h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .profile-info {
+    grid-column: 1 / 2;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .order-history {
+    grid-column: 2 / -1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .order-history table {
+    width: 100%;
+  }
+
+  .order-history th,
+  .order-history td {
+    padding: 10px;
+    text-align: center;
+  }
+  a {
+    color: #ef84b3; 
+  }
+  .back-button {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+  }
+  

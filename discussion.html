@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Florence Shop - Discussion</title>
+    <style>
+      #content h1 {
+        color: black;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="icon">
+      <i class="fa fa-shopping-cart" style="font-size: 40px"></i>
+      <i class="fa fa-search" style="font-size: 36px"></i>
+    </div>
+
+    <header id="header">
+      <div id="logo"><img src="logo.png" alt="Logo"></div>
+    </header>
+
+    <nav id="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shopping.html" >Shopping</a></li>
+        <li><a href="discussion.html">Discussion</a></li>
+        <li><a href="account.html">Account</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+    </nav>
+
+    <div id="content">
+      <h1>Welcome to the Discussion Forum</h1>
+    </div>
+
+    <header>
+      <h2>Discussion Thread</h2>
+    </header>
+
+    <div class="discussion-container">
+      <div class="post">
+        <div class="post-header">
+          <h2 class="post-title">
+            Inquiry about Different Types of Flowers and Money Plants
+          </h2>
+          <p class="post-author">Posted by: Pruthviraj Mariwad</p>
+        </div>
+        <div class="post-content">
+          <p>
+            I am writing to inquire about the various types of flowers and money
+            plants available at your nursery/garden center. As an avid gardener,
+            I am always looking to expand my collection and introduce new
+            varieties into my garden. Flower Varieties: Could you please share a
+            list of the different types of flowers you have in stock? Are there
+            any specific seasonal flowers that you recommend for the current
+            time of the year? Do you have any rare or exotic flower species that
+            are not commonly found in local gardens? What are the prices of the
+            flowers, and do they vary depending on the type and size? Money
+            Plants: Do you have a variety of money plants available? Can you
+            provide details about the different types of money plants you offer?
+            Are there any specific care instructions or tips for maintaining
+            healthy money plants? What are the price ranges for the money
+            plants, and are they based on size or variety?
+          </p>
+        </div>
+        <button class="post-button">Post a Reply</button>
+      </div>
+
+      <!-- Add more discussion posts here -->
+
+      <div class="post">
+        <div class="post-header">
+          <h2 class="post-title">Discussion Title</h2>
+          <p class="post-author">Posted by: Justin Trudeau</p>
+        </div>
+        <div class="post-content">
+          <p>This is another discussion post.</p>
+        </div>
+        <button class="post-button">Post a Reply</button>
+      </div>
+
+      <!-- Add more discussion posts here -->
+    </div>
+
+    <form id="post-form" action="#" method="post">
+      <h2>Post a Discussion</h2>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required />
+      <label for="author">Author:</label>
+      <input type="text" id="author" name="author" required />
+      <label for="content">Content:</label>
+      <textarea id="content" name="content" rows="4" required></textarea>
+      <button type="submit">Post</button>
+    </form>
+    <footer>
+      <p>&copy; 2023 Florence Shop. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

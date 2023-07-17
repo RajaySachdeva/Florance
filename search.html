@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <!-- Your header content here -->
+  </header>
+
+  <main>
+    <h1>Search Page</h1>
+
+    <form id="search-form">
+      <input type="text" id="search-input" placeholder="Search...">
+      <button type="submit">Search</button>
+    </form>
+
+    <div id="search-results">
+      <!-- Display the search results here -->
+    </div>
+  </main>
+
+  <footer>
+    <!-- Your footer content here -->
+  </footer>
+  <script>
+  // Function to simulate searching for products
+function searchProducts(query) {
+  // Placeholder implementation for demonstration purposes
+  const products = [
+    { id: 1, name: 'lily', price: 10.99 },
+    { id: 2, name: 'tulip', price: 19.99 },
+    { id: 3, name: 'rose', price: 14.99 },
+    { id: 4, name: 'lavender', price: 24.99 },
+    { id: 5, name: 'orchid', price: 29.99 }
+  ];
+
+  // Simulate searching and filtering products based on the query
+  const results = products.filter(product =>
+    product.name.toLowerCase().includes(query.toLowerCase())
+  );
+
+  return results;
+}
+
+// Function to display the search results
+function displaySearchResults(results) {
+  const searchResultsContainer = document.getElementById('search-results');
+
+  // Clear previous results
+  searchResultsContainer.innerHTML = '';
+
+  // Display each search result
+  results.forEach(result => {
+    const resultElement = document.createElement('div');
+    const resultLink = document.createElement('a');
+    resultLink.href = `shopping.html?id=${result.id}`;
+    resultLink.textContent = result.name;
+    resultElement.appendChild(resultLink);
+    searchResultsContainer.appendChild(resultElement);
+  });
+}
+
+// Function to handle search form submission
+function handleSearchFormSubmit(event) {
+  event.preventDefault();
+
+  // Get the search query from the form input
+  const searchInput = document.getElementById('search-input');
+  const query = searchInput.value;
+
+  // Perform search and display the results
+  const searchResults = searchProducts(query);
+  displaySearchResults(searchResults);
+}
+
+// Get the search form element
+const searchForm = document.getElementById('search-form');
+
+// Add event listener to the search form for form submission
+searchForm.addEventListener('submit', handleSearchFormSubmit);
+
+</script>
+  <!--<script src="script.js"></script> -->
+</body>
+</html>

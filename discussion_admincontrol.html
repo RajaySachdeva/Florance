@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Florence Shop - Discussion</title>
+    <style>
+        #content h1 {
+          color: black;
+        }
+      </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="icon">
+      <i class="fa fa-shopping-cart" style="font-size: 40px"></i>
+      <i class="fa fa-search" style="font-size: 36px"></i>
+    </div>
+
+    <header id="header">
+      <div id="logo"><img src="logo.png" alt="Logo"></div>
+    </header>
+
+    <nav id="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shopping.html" >Shopping</a></li>
+        <li><a href="discussion.html">Discussion</a></li>
+        <li><a href="account.html">Account</a></li>
+        <li><a href="About Us page.html">About Us</a></li>
+      </ul>
+    </nav>
+
+    <div id="content">
+      <h1>Welcome to the Discussion Forum</h1>
+
+      <header>
+        <h2>Discussion Thread</h2>
+      </header>
+
+      <!--Search functionality for admin control-->
+      <div id="search-bar">
+        <input type="text" id="search-input" placeholder="Search posts" />
+        <button id="search-button">Search</button>
+      </div>
+
+      <div class="discussion-container" id="discussion-container">
+        <div class="post">
+          <div class="post-header">
+            <h2 class="post-title">
+              Inquiry about Different Types of Flowers and Money Plants
+            </h2>
+            <p class="post-author">Posted by: Pruthviraj Mariwad</p>
+            <div class="post-actions">
+              <button class="edit-button">Edit</button>
+              <button class="delete-button">Delete</button>
+            </div>
+          </div>
+          <div class="post-content">
+            <p>
+              I am writing to inquire about the various types of flowers and money
+              plants available at your nursery/garden center.
+          </div>
+          <button class="post-button">Post a Reply</button>
+        </div>
+
+        <!-- Add more discussion posts here -->
+
+        <div class="post">
+          <div class="post-header">
+            <h2 class="post-title">lily flowers</h2>
+            <p class="post-author">Posted by: Justin Trudeau</p>
+            <div class="post-actions">
+              <button class="edit-button">Edit</button>
+              <button class="delete-button">Delete</button>
+            </div>
+          </div>
+          <div class="post-content">
+            <p>This is justin, I would like to orders lily flower.</p>
+          </div>
+
+        <button class="post-button">Post a Reply</button>
+</div>
+
+<!-- Add more discussion posts here -->
+
+<div class="post">
+  <div class="post-header">
+    <h2 class="post-title">Money plants</h2>
+    <p class="post-author">Posted by: Jack Ryan</p>
+    <div class="post-actions">
+      <button class="edit-button">Edit</button>
+      <button class="delete-button">Delete</button>
+    </div>
+  </div>
+  <div class="post-content">
+    <p>This is another discussion post.</p>
+  </div>
+  <button class="post-button">Post a Reply</button>
+</div>
+
+</div>
+
+<form id="post-form" action="#" method="post">
+  <h2>Post a Discussion</h2>
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" required />
+  <label for="author">Author:</label>
+  <input type="text" id="author" name="author" required />
+  <label for="content">Content:</label>
+  <textarea id="content" name="content" rows="4" required></textarea>
+  <button type="submit">Post</button>
+</form>
+
+<!-- Admin Controls -->
+<div id="admin-controls">
+  <h2>Admin Controls</h2>
+  <button id="delete-all-button">Delete All Posts</button>
+</div>
+
+<!-- User Management -->
+<div id="user-management">
+    <h2>User Management</h2>
+    <ul id="user-list">
+      <!-- User list will be dynamically added here -->
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2023 Florence Shop. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+
+<!-- Admin control javascript -->
+<script src="discussion_admincontrol_script.js"></script>
+
+<!-- Discussion content -->
+<script src="discussion_content_script.js"></script>
+
+</body>
+</html>

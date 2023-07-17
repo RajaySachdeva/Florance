@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Florence Shop - About us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    /* Your existing CSS styles here */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Fertigo Script", cursive; /* Change font here */
+      background-color: #f9f9f9;
+      color: #333;
+    }
+  
+    #header {
+      background-color: #ef84b3;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;  
+    }
+  
+    #logo img {
+      height: 50px;
+    }
+  
+    #header-icons a:last-child {
+      margin-left: 0;
+    }
+  
+    #navigation {
+      background-color: #ef84b3;
+      padding: 10px 0;
+      text-align: center;
+    }
+  
+    #navigation ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+  
+    #navigation li {
+      display: inline-block;
+    }
+  
+    #navigation li a {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      color: #fff;
+      text-decoration: none;
+      background-color: #ef84b3;
+      border-radius: 20px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+      transition: background-color 0.3s ease;
+    }
+  
+    #navigation li a:hover {
+      background-color: #c95b88;
+      color: #fff;
+    }
+  
+    #content {
+      padding: 40px;
+      text-align: center;
+    }
+  
+    main {
+      margin: 20px;
+      text-align: center;
+      font-family: "Arial", sans-serif;
+    }
+  
+    .icon {
+      display: inline-block;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding-left: 10px;
+      margin-right: 10px;
+      color: white;
+    }
+  
+    .product {
+      display: inline-block;
+      margin: 20px;
+    }
+  
+    .product p {
+      color: #555;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  
+    .product a {
+      text-decoration: none;
+    }
+  
+    footer {
+      background-color: #f1f1f1;
+      padding: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #555;
+    }
+  
+  
+    h1 {
+      color: #ef84b3;
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-align: center; /* Center the heading */
+    }
+  
+    h2 {
+      color: #ef84b3;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  
+    .flower-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  
+    .flower-item {
+      width: 200px;
+      margin: 20px;
+      padding: 20px;
+      text-align: center;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+  
+    .flower-item:hover {
+      transform: translateY(-5px);
+    }
+  
+    .flower-item img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+  
+    .flower-item:hover img {
+      transform: scale(1.05);
+    }
+  
+    .flower-item h3 {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+  
+    .flower-item p {
+      margin-top: 5px;
+    }
+  
+    .sorting-options {
+      margin-bottom: 20px;
+    }
+  
+    #sort {
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .custom-font {
+        font-family: Arial, sans-serif;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .image-container img {
+      width: 400px;
+      height: auto;
+      margin: 10px;
+    }
+
+    .about-content {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .about-content p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Your existing HTML code here -->
+  <div class="icon">
+    <a href="cart.html"><i class="fa fa-shopping-cart" style="font-size: 40px; color: white;"></i></a>
+    <a href="search.html"><i class="fa fa-search" style="font-size: 36px; color: white;"></i></a>
+    <a href="login.html"><i class="fa fa-user-o" style="font-size: 36px; color: white;"></i></a>
+
+  </div>
+
+  <header id="header">
+    <div id="logo"><img src="logo.png" alt="Logo"></div>
+  </header>
+
+<nav id="navigation">
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="shopping.html" >Shopping</a></li>
+  <li><a href="discussion.html">Discussion</a></li>
+  <li><a href="account.html">Account</a></li>
+  <li><a href="About Us page.html">About Us</a></li>
+</ul>
+</nav>
+  <h1>About Us</h1>
+
+  <div class="image-container">
+    <img src="buttercup.jpg" alt="Image 1">
+    <img src="carnation.jpg" alt="Image 2">
+    <img src="lily.jpg" alt="Image 3">
+  </div>
+
+   <div class="about-content gray-background">
+    <b><pre><p>Welcome to Florence Flower Shop! We are passionate about delivering beautiful and fresh flowers for all occasions.
+    With a wide selection of floral arrangements and bouquets, we strive to bring joy and elegance to your special moments.</p></pre>
+
+    <pre><p>At Florence Flower Shop, we work closely with local growers to ensure the highest quality and freshness of our flowers.
+    Our talented florists carefully handcraft each arrangement with creativity and attention to detail, making sure every order
+    exceeds your expectations.</p></pre>
+
+    <pre><p>Whether you're celebrating a birthday, anniversary, wedding, or any other milestone, our dedicated team is here to help
+    you find the perfect flowers to convey your sentiments. We offer convenient online shopping, reliable delivery services,
+    and exceptional customer support to make your experience with us enjoyable and stress-free.</p></pre>
+
+    <pre><p>Thank you for choosing Florence Flower Shop as your go-to destination for stunning floral arrangements & we look forward to
+    serving you and being a part of your special moments.</p></pre></b>
+  </div>
+
+  <footer>
+    <!-- footer content -->
+  </footer>
+</body>
+</html>

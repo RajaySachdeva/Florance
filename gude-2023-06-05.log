@@ -1,0 +1,17 @@
+22:58:17:519 [ALWAYS]	GUDE Logging Started
+22:58:17:520 [INFO]	SqliteResumeCache::SqliteResumeCache basedirectory is null/empty
+22:58:17:520 [ERROR]	SqliteResumeCache::CreateSqliteResumeCache creating resume cache pointer failure
+22:58:17:520 [ERROR]	Initialize resume cache pointer failure
+22:58:17:520 [INFO]	gude policy POLICY_USER limit (2,2,1) chunk 2097152, chunking (UL 0 DL 1), resXfer 1, adapt 0, NSURL 0, timeout 86400 
+22:58:17:520 [INFO]	Initialized -- gude-lib version: v0.12.1 app: gude
+22:58:19:169 [WARN]	Ignoring attempt to reinit logging to \gude at level 4 retaining 3 days of logs
+22:58:19:169 [INFO]	SqliteResumeCache::SqliteResumeCache basedirectory is null/empty
+22:58:19:169 [ERROR]	SqliteResumeCache::CreateSqliteResumeCache creating resume cache pointer failure
+22:58:19:170 [ERROR]	Initialize resume cache pointer failure
+22:58:19:170 [INFO]	gude policy POLICY_USER limit (4,4,1) chunk 2097152, chunking (UL 0 DL 1), resXfer 1, adapt 0, NSURL 1, timeout 86400 
+22:58:19:170 [INFO]	Initialized -- gude-lib version: v0.12.1 app: gude
+22:58:19:173 [WARN]	WGudeRequest::applyAutoDetectProxyAutoConfigSettings Failed to autodetect proxy settings. WinHTTP Bad Auto Proxy Script. last error code = 12166 
+22:58:19:278 [WARN]	WGudeRequest::applyAutoDetectProxyAutoConfigSettings Failed to autodetect proxy settings. WinHTTP Bad Auto Proxy Script. last error code = 12166 
+22:58:19:279 [WARN]	WGudeRequest::applyAutoDetectProxyAutoConfigSettings Failed to autodetect proxy settings. WinHTTP Bad Auto Proxy Script. last error code = 12166 
+22:58:19:407 [WARN]	WGudeRequest::applyAutoDetectProxyAutoConfigSettings Failed to autodetect proxy settings. WinHTTP Bad Auto Proxy Script. last error code = 12166 
+22:58:19:407 [WARN]	WGudeRequest::applyAutoDetectProxyAutoConfigSettings Failed to autodetect proxy settings. WinHTTP Bad Auto Proxy Script. last error code = 12166 

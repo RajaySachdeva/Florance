@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Account Page</title>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Arial", sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    #header {
+      background-color: #ef84b3;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #logo img {
+      height: 50px;
+    }
+
+    #header-icons a:last-child {
+      margin-left: 0;
+    }
+
+    #navigation {
+      background-color: #ef84b3;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    #navigation ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #navigation li {
+      display: inline-block;
+    }
+
+    #navigation li a {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      color: #fff;
+      text-decoration: none;
+      background-color: #ef84b3;
+      border-radius: 20px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+      transition: background-color 0.3s ease;
+    }
+
+    #navigation li a:hover {
+      background-color: #c95b88;
+    }
+
+    #content {
+      padding: 40px;
+      text-align: center;
+    }
+
+    main {
+      margin: 20px;
+      text-align: center;
+      font-family: "Arial", sans-serif;
+    }
+
+    .icon {
+      display: inline-block;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding-left: 10px;
+      margin-right: 10px;
+      color: white;
+    }
+
+    .product {
+      display: inline-block;
+      margin: 20px;
+    }
+
+    .product p {
+      color: #555;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .product a {
+      text-decoration: none;
+    }
+
+    footer {
+      background-color: #f1f1f1;
+      padding: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #555;
+    }
+
+
+    h1 {
+      color: #ef84b3;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #ef84b3;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .product img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .product img:hover {
+      transform: scale(1.05);
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+    <div class="icon">
+      <a href="cart.html"><i class="fa fa-shopping-cart" style="font-size: 40px; color: white;"></i></a>
+      <a href="search.html"><i class="fa fa-search" style="font-size: 36px; color: white;"></i></a>
+      <a href="login.html"><i class="fa fa-user-o" style="font-size: 36px; color: white;"></i></a>
+      <a href="index.html"><i class="fa fa-sign-out" style="font-size: 36px; color: white;"></i></a>
+
+    </div>
+
+
+  <header id="header">
+    <div id="logo"><img src="logo.png" alt="Logo"></div>
+  </header>
+
+  <nav id="navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a
+          href="shopping.html"
+          onclick="toggleDropdown()"
+          onmouseenter="showDropdown()"
+          onmouseleave="hideDropdown()"
+          >Shopping</a
+        >
+      </li>
+      <li><a href="discussion.html">Discussion</a></li>
+      <li><a href="account.html">Account</a></li>
+      <li><a href="About Us page.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>User Information</h2>
+      <table> 
+        <tr>
+          <th>User name</th>
+          <th>User email</th>
+          <th>Address</th>
+        </tr>
+        <tr>
+          <td>Eman</td>
+          <td>eman@yahoo.com</td>
+          <td>123 Main St, City, Country</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Order Statuses</h2>
+      <table> 
+        <tr>
+          <th>Order Number</th>
+          <th>Order Status</th>
+        </tr>
+        <tr>
+          <td>12345</td>
+          <td>Shipped</td>
+        </tr>
+        <tr>
+          <td>67890</td>
+          <td>Processing</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Order History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Order Number</th>
+            <th>Order Date</th>
+            <th>Items Purchased</th>
+            <th>Total Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>12345</td>
+            <td>Jan 1, 2023</td>
+            <td>mother day bouquet </td>
+            <td>$50.00</td>
+          </tr>
+          <tr>
+            <td>67890</td>
+            <td>Feb 1, 2023</td>
+            <td>birthday bouquet</td>
+            <td>$35.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Track Your Shipment</h2>
+      <form>
+        <label for="tracking-number">Enter Your Tracking Number:</label>
+        <input type="text" id="tracking-number" name="tracking-number">
+        <div class="product">
+          <button type="submit">Track</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Florence Shop. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript code for the account page
+
+    // Function to handle the logout action
+    function handleLogout() {
+      // Perform logout logic here
+      alert("You have been logged out!");
+      window.location.href = "login.html"; // Redirect to the login page
+    }
+
+    // Add event listener to the logout icon
+    const logoutLink = document.getElementById("logout-link");
+    logoutLink.addEventListener("click", function(event) {
+      event.preventDefault();
+      handleLogout();
+    });
+  </script>
+</body>
+</html>
+
+  
