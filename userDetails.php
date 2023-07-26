@@ -1,7 +1,7 @@
 <?php
     require('db_conn.php');
 
-    $query = 'SELECT * FROM tblUsers;';
+    $query = 'SELECT * FROM tblUsers where userType!="Admin" and active ="1"';
     $results = @mysqli_query($dbc,$query);
 ?>
 
@@ -167,11 +167,11 @@
 
     <nav id="navigation">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shopping.html" >Shopping</a></li>
-        <li><a href="discussion.html">Discussion</a></li>
-        <li><a href="account.html">Account</a></li>
-        <li><a href="About Us page.html">About Us</a></li>
+        <li><a href="userDetails.html">Users</a></li>
+        <li><a href="AdminItemsList.php" >Items</a></li>
+        <li><a href="AdminDiscussions.php">Discussions</a></li>
+        <li><a href="AdminOrders.html">Orders</a></li>
+        <li><a href=".html">About Us</a></li>
       </ul>
     </nav>
 
@@ -185,11 +185,11 @@
         <thead>
             <tr align="left">
                 <th>ID</th>
-                <th>name</th>
-                <th>email</th>
-                <th>phone</th>
-                <th>province</th>
-                <th>Edit</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Province</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -197,16 +197,16 @@
                 while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
                     $str_to_print = "";
                     $str_to_print = "<tr> <td>{$row['user_id']}</td>";
-                    $str_to_print .= "<td> {$row['name']}</td>";
+                    $str_to_print .= "<td> {$row['firstname']}  {$row['lastname']}</td>";
                     $str_to_print .= "<td> {$row['email']}</td>";
                     $str_to_print .= "<td> {$row['phone']}</td>";
-                    $str_to_print .= "<td> {$row['province']}</td>";
-                    if($row['Approved']==1){
+                    $str_to_print .= "<td> {$row['Province']}</td>";
+                    if($row['active']==1){
                     $str_to_print .= "<td> <a
-                     href='editUsers.php?user_id={$row['user_id']}'>Details</a>|<a class='delete' href='changeUserStatus.php?user_id={$row['user_id']}&status={$row['Approved']}'>Disapprove</a> | <a class='delete' href='deleteUser.php?user_id={$row['user_id']}'>Delete</a></tr>";
-                }else if($row['Approved']==0)
+                     href='editUsers.php?user_id={$row['user_id']}'>Details</a>|<a class='delete' href='changeUserStatus.php?user_id={$row['user_id']}&status={$row['active']}'>Disapprove</a> | <a class='delete' href='deleteUser.php?user_id={$row['user_id']}'>Delete</a></tr>";
+                }else if($row['active']==0)
                 {
-                    $str_to_print .= "<td> <a href='editUsers.php?user_id={$row['user_id']}'>Details</a>|<a class='delete' href='changeUserStatus.php?user_id={$row['user_id']}&status={$row['Approved']}'>Approve</a> | <a href='deleteuser.php?user_id={$row['user_id']}&status={$row['Approved']}'>Delete</a></tr>";
+                    $str_to_print .= "<td> <a href='editUsers.php?user_id={$row['user_id']}'>Details</a>|<a class='delete' href='changeUserStatus.php?user_id={$row['user_id']}&status={$row['active']}'>Approve</a> | <a href='deleteuser.php?user_id={$row['user_id']}&status={$row['active']}'>Delete</a></tr>";
                 }
                     echo $str_to_print;
                 }
