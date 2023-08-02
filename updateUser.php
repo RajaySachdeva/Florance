@@ -9,10 +9,10 @@
         $errors[] = "<p> Error!!!! User ID is required!!</p>";
     }
 
-    if(!empty($_POST['name'])){
-        $name = $_POST['name'];  
+    if(!empty($_POST['firstname'])){
+        $firstname = $_POST['firstname'];  
     } else {
-        $name = null;
+        $firstname = null;
         $errors[] = "<p> Error!!!! Name is required!!</p>";
     }
     if(!empty($_POST['email'])){
@@ -37,12 +37,12 @@
     if(count($errors) == 0){
         
         $user_id_clean = prepare_string($dbc, $user_id);
-        $name_clean = prepare_string($dbc, $name);
+        $name_clean = prepare_string($dbc, $firstname);
         $email_clean = prepare_string($dbc, $email);
         $phone_clean = prepare_string($dbc, $phone);
         $province_clean = prepare_string($dbc, $province);
         
-        $query = "UPDATE users SET name = ?, email = ?, phone = ?, province = ? WHERE  user_id = ?;";
+        $query = "UPDATE tblUsers SET firstname = ?, email = ?, phone = ?, province = ? WHERE  user_id = ?;";
         
         $stmt = mysqli_prepare($dbc, $query);
         

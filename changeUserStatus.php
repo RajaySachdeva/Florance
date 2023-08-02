@@ -8,16 +8,16 @@
         $status = $_GET['status'];
         
     }else{
-        $error = "<p>Error! User Id not found.</p>";
+        $error = "<p>Error! User Id or Status not found.</p>";
     }
 
     if($error == null){
         $query="";
         if($status==1){
-            $query="Update users set Approved=0 where user_id ='$user_id';";
+            $query="Update tblUsers set active=0 where user_id ='$user_id';";
 
         }else if($status==0){
-            $query="Update users set Approved=1 where user_id ='$user_id';";
+            $query="Update tblUsers set active=1 where user_id ='$user_id';";
         }
        // $query = "DELETE FROM users WHERE user_id = '$user_id';"; // replace with paramertized query using mysqli_stmt_bind_param
         print($query);

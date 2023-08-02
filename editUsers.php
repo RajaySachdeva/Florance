@@ -10,15 +10,15 @@
     }
 
     if($error == null){
-        $query = "SELECT * FROM users WHERE user_id = $user_id;"; // replace with paramertized query using mysqli_stmt_bind_param
+        $query = "SELECT * FROM tblUsers WHERE user_id = $user_id;"; // replace with paramertized query using mysqli_stmt_bind_param
         $result = @mysqli_query($dbc, $query);
         
         if(mysqli_num_rows($result) == 1){
             $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-            $name = $row['name'];
+            $firstname = $row['firstname'];
             $email = $row['email'];
             $phone = $row['phone'];
-            $province = $row['province'];
+            $province = $row['Province'];
         } // else-> inccorect entry in db
     } else {
         echo $error;
@@ -199,13 +199,14 @@
       <h1>Welcome to Florence Shop</h1>
     </div>
     <form action="updateUser.php" method="post" >
-            <div>
+            <!-- <div>
                 <label for="user_id">User ID : </label>
                 <input type="text" id="user_id" name="user_id" value="<?php echo $user_id; ?>"/>
-            </div>
+            </div> -->
+            <input type="hidden" id="user_id" name="user_id" value="<?php echo $user_id; ?>">
             <div>
                 <label for="name">Name : </label>
-                <input type="text" id="name" name="name" value="<?php echo $name; ?>"/>
+                <input type="text" id="firstname" name="firstname" value="<?php echo $firstname; ?>"/>
             </div>
             <div>
                 <label for="email">Email : </label>

@@ -1,7 +1,7 @@
 <?php
     require('db_conn.php');
 
-    $query = 'SELECT * FROM tblUsers where userType!="Admin" and active ="1"';
+    $query = 'SELECT * FROM tblUsers where userType!="Admin"';
     $results = @mysqli_query($dbc,$query);
 ?>
 
@@ -197,16 +197,16 @@
                 while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
                     $str_to_print = "";
                     $str_to_print = "<tr> <td>{$row['user_id']}</td>";
-                    $str_to_print .= "<td> {$row['firstname']}  {$row['lastname']}</td>";
+                    $str_to_print .= "<td> {$row['firstname']}</td>";
                     $str_to_print .= "<td> {$row['email']}</td>";
                     $str_to_print .= "<td> {$row['phone']}</td>";
                     $str_to_print .= "<td> {$row['Province']}</td>";
                     if($row['active']==1){
                     $str_to_print .= "<td> <a
-                     href='editUsers.php?user_id={$row['user_id']}'>Details</a>|<a class='delete' href='changeUserStatus.php?user_id={$row['user_id']}&status={$row['active']}'>Disapprove</a> | <a class='delete' href='deleteUser.php?user_id={$row['user_id']}'>Delete</a></tr>";
+                     href='editUsers.php?user_id={$row['user_id']}'>Details</a>|<a class='delete' href='changeUserStatus.php?user_id={$row['user_id']}&status={$row['active']}'>Disapprove</a></tr>";
                 }else if($row['active']==0)
                 {
-                    $str_to_print .= "<td> <a href='editUsers.php?user_id={$row['user_id']}'>Details</a>|<a class='delete' href='changeUserStatus.php?user_id={$row['user_id']}&status={$row['active']}'>Approve</a> | <a href='deleteuser.php?user_id={$row['user_id']}&status={$row['active']}'>Delete</a></tr>";
+                    $str_to_print .= "<td> <a href='editUsers.php?user_id={$row['user_id']}'>Details</a>|<a class='delete' href='changeUserStatus.php?user_id={$row['user_id']}&status={$row['active']}'>Approve</a></tr>";
                 }
                     echo $str_to_print;
                 }
