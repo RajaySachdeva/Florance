@@ -1,7 +1,7 @@
 <?php
     require('db_conn.php');
 
-    $query = 'SELECT * FROM tblDiscussion where approved="1"';
+    $query = 'SELECT d.discussionID,d.title,d.author,d.content,d.approved,COUNT(c.commentID) total FROM tblDiscussion d INNER join tblComments c ON d.discussionID=c.sourceID GROUP BY d.discussionID;';
     $results = @mysqli_query($dbc,$query);
 ?>
 
@@ -171,7 +171,7 @@
         <li><a href="AdminItemsList.php" >Items</a></li>
         <li><a href="AdminDiscussions.php">Discussions</a></li>
         <li><a href="AdminOrders.html">Orders</a></li>
-        <li><a href=".html">About Us</a></li>
+        <li><a href="adminFeedback.php">Feedback</a></li>
       </ul>
     </nav>
 
@@ -187,6 +187,7 @@
                 <th>ID</th>
                 <th>Title</th>
                 <th>Discussion</th>
+                <th>Total Comments</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -197,9 +198,10 @@
                     $str_to_print = "<tr> <td>{$row['discussionID']}</td>";
                     $str_to_print .= "<td> {$row['title']}</td>";
                     $str_to_print .= "<td> {$row['title']}</td>";
+                    $str_to_print .= "<td> {$row['total']}</td>";
                     if($row['approved']==1){
                     $str_to_print .= "<td> <a
-                     href='editUsers.php?discussionID={$row['discussionID']}'>Details</a>|<a class='delete' href='changeUserStatus.php?discussionID={$row['discussionID']}&status={$row['approved']}'>Disapprove</a> | <a class='delete' href='deleteUser.php?discussionID={$row['discussionID']}'>Delete</a></tr>";
+                     href='adminEditDiscussion.php?discussionID={$row['discussionID']}'>Details</a>|<a class='delete' href='changeUserStatus.php?discussionID={$row['discussionID']}&status={$row['approved']}'>Disapprove</a> | <a class='delete' href='deleteUser.php?discussionID={$row['discussionID']}'>Delete</a></tr>";
                 }else if($row['approved']==0)
                 {
                     $str_to_print .= "<td> <a href='editUsers.php?discussionID={$row['discussionID']}'>Details</a>|<a class='delete' href='changeUserStatus.php?discussionID={$row['discussionID']}&status={$row['active']}'>Approve</a> | <a href='deleteuser.php?discussionID={$row['discussionID']}&status={$row['approved']}'>Delete</a></tr>";

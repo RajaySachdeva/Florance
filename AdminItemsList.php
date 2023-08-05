@@ -171,7 +171,7 @@
         <li><a href="AdminItemsList.php" >Items</a></li>
         <li><a href="AdminDiscussions.php">Discussions</a></li>
         <li><a href="AdminOrders.html">Orders</a></li>
-        <li><a href=".html">About Us</a></li>
+        <li><a href="adminFeedback.php">Feedback</a></li>
       </ul>
     </nav>
 

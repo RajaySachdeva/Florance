@@ -1,10 +1,26 @@
 <?php
     require('db_conn.php');
 
-    $query = 'SELECT firstname,OrderStatus,Amount FROM tblOrders
-    inner join tblUsers
-    ON  tblOrders.SellerID=tblUsers.user_id';
-    $results = @mysqli_query($dbc,$query);
+    $error = null;
+    if(!empty($_GET['discussionID'])){
+        $discussionID = $_GET['discussionID'];
+    } else {
+        $discussionID = null;
+        $error = "<p> Error! Discussion ID not found.";
+    }
+
+    if($error == null){
+        $query = "SELECT * FROM tblDiscussion WHERE discussionID = $discussionID;"; // replace with paramertized query using mysqli_stmt_bind_param
+        $result = @mysqli_query($dbc, $query);
+        
+        if(mysqli_num_rows($result) == 1){
+            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            $title = $row['title'];
+            $content = $row['content'];
+        } // else-> inccorect entry in db
+    } else {
+        echo $error;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -169,65 +185,41 @@
 
     <nav id="navigation">
       <ul>
-        <li><a href="userDetails.php">Users</a></li>
-        <li><a href="AdminItemsList.php" >Items</a></li>
-        <li><a href="AdminDiscussions.php">Discussions</a></li>
-        <li><a href="AdminOrders.html">Orders</a></li>
-        <li><a href="adminFeedback.php">Feedback</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shopping.html" >Shopping</a></li>
+        <li><a href="discussion.html">Discussion</a></li>
+        <li><a href="account.html">Account</a></li>
+        <li><a href="About Us page.html">About Us</a></li>
       </ul>
     </nav>
 
     <div id="content">
       <h1>Welcome to Florence Shop</h1>
     </div>
-
-    <main>
-      <h2>Orders List</h2>
-      <table id="myTable"class="cell-border" cellspacing="0" width="90%" class="display">
-        <thead>
-            <tr align="left">
-                <th>ID</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-                while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
-                    $str_to_print = "";
-                    $str_to_print = "<tr> <td>{$row['item_id']}</td>";
-                    $str_to_print .= "<td> {$row['name']}</td>";
-                    $str_to_print .= "<td> CAD  $ {$row['price']}</td>";
-                    if($row['approved']==1){
-                    $str_to_print .= "<td> <a
-                     href='editUsers.php?item_id={$row['item_id']}'>Details</a>|<a class='delete' href='changeUserStatus.php?item_id={$row['item_id']}&status={$row['approved']}'>Disapprove</a> | <a class='delete' href='deleteUser.php?item_id={$row['item_id']}'>Delete</a></tr>";
-                }else if($row['approved']==0)
-                {
-                    $str_to_print .= "<td> <a href='editUsers.php?item_id={$row['item_id']}'>Details</a>|<a class='delete' href='changeUserStatus.php?item_id={$row['item_id']}&status={$row['active']}'>Approve</a> | <a href='deleteuser.php?item_id={$row['item_id']}&status={$row['approved']}'>Delete</a></tr>";
-                }
-                    echo $str_to_print;
-                }
-            ?>
-        </tbody>
-    </table>
-    </main>
-    <script>
-        $(document).ready(function () {
-            if($('#myTable').length==1){
-                //alert("This is an alert message!");
-                $('#myTable').DataTable()
-            }
-//             $('.delete').click(function() {
-            
-//     if (confirm('Are you sure?')) {
-      
-//         var url = $(this).attr('href');
-//         $('#content').load(url);
-//     }
-//   });
-        });
-    </script>
+    <form action="adminUpdateDiscussion.php" method="post" >
+            <!-- <div>
+                <label for="user_id">User ID : </label>
+                <input type="text" id="user_id" name="user_id" value="<?php echo $user_id; ?>"/>
+            </div> -->
+            <input type="hidden" id="discussionID" name="discussionID" value="<?php echo $discussionID; ?>">
+            <div>
+                <label for="name">Title : </label>
+                <input type="text" id="title" name="title" value="<?php echo $title; ?>"/>
+            </div>
+            <div>
+                <label for="content">Post Text : </label>
+                <input type="text" id="content" name="content" value="<?php echo $content; ?>"/>
+            </div>
+            <!-- <div>
+                <label for="phone">Phone : </label>
+                <input type="text" id="phone" name="phone" value="<?php echo $phone; ?>"/>
+            </div>
+            <div>
+                <label for="province">Province : </label>
+                <input type="text" id="province" name="province" value="<?php echo $province; ?>"/>
+            </div> -->
+            <button type="submit">Update Data</button>
+        </form>
     <footer>
       <p>&copy; 2023 Florence Shop. All rights reserved.</p>
     </footer>

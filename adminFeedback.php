@@ -1,9 +1,7 @@
 <?php
     require('db_conn.php');
 
-    $query = 'SELECT firstname,OrderStatus,Amount FROM tblOrders
-    inner join tblUsers
-    ON  tblOrders.SellerID=tblUsers.user_id';
+    $query = 'SELECT * FROM tblFeedback';
     $results = @mysqli_query($dbc,$query);
 ?>
 
@@ -169,7 +167,7 @@
 
     <nav id="navigation">
       <ul>
-        <li><a href="userDetails.php">Users</a></li>
+        <li><a href="userDetails.html">Users</a></li>
         <li><a href="AdminItemsList.php" >Items</a></li>
         <li><a href="AdminDiscussions.php">Discussions</a></li>
         <li><a href="AdminOrders.html">Orders</a></li>
@@ -182,32 +180,35 @@
     </div>
 
     <main>
-      <h2>Orders List</h2>
+      <h2>Users List</h2>
       <table id="myTable"class="cell-border" cellspacing="0" width="90%" class="display">
         <thead>
             <tr align="left">
                 <th>ID</th>
                 <th>Name</th>
-                <th>Price</th>
-                <th>Actions</th>
+                <th>Email</th>
+                <th>Comment</th>
             </tr>
         </thead>
         <tbody>
             <?php
                 while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
                     $str_to_print = "";
-                    $str_to_print = "<tr> <td>{$row['item_id']}</td>";
-                    $str_to_print .= "<td> {$row['name']}</td>";
-                    $str_to_print .= "<td> CAD  $ {$row['price']}</td>";
-                    if($row['approved']==1){
-                    $str_to_print .= "<td> <a
-                     href='editUsers.php?item_id={$row['item_id']}'>Details</a>|<a class='delete' href='changeUserStatus.php?item_id={$row['item_id']}&status={$row['approved']}'>Disapprove</a> | <a class='delete' href='deleteUser.php?item_id={$row['item_id']}'>Delete</a></tr>";
-                }else if($row['approved']==0)
-                {
-                    $str_to_print .= "<td> <a href='editUsers.php?item_id={$row['item_id']}'>Details</a>|<a class='delete' href='changeUserStatus.php?item_id={$row['item_id']}&status={$row['active']}'>Approve</a> | <a href='deleteuser.php?item_id={$row['item_id']}&status={$row['approved']}'>Delete</a></tr>";
+                    $str_to_print = "<tr> <td>{$row['feedbackID']}</td>";
+                    $str_to_print .= "<td> {$row['firstname']}</td>";
+                    $str_to_print .= "<td> {$row['email']}</td>";
+                    $str_to_print .= "<td> {$row['comment']}</td>";
                 }
+                    // $str_to_print .= "<td> {$row['Province']}</td>";
+                //     if($row['active']==1){
+                //     $str_to_print .= "<td> <a
+                //      href='editUsers.php?user_id={$row['user_id']}'>Details</a>|<a class='delete' href='changeUserStatus.php?user_id={$row['user_id']}&status={$row['active']}'>Disapprove</a></tr>";
+                // }else if($row['active']==0)
+                // {
+                //     $str_to_print .= "<td> <a href='editUsers.php?user_id={$row['user_id']}'>Details</a>|<a class='delete' href='changeUserStatus.php?user_id={$row['user_id']}&status={$row['active']}'>Approve</a></tr>";
+                // }
                     echo $str_to_print;
-                }
+                //}
             ?>
         </tbody>
     </table>
